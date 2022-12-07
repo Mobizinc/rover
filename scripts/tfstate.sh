@@ -472,8 +472,8 @@ function show {
     echo " -plan:  ${TF_DATA_DIR}/tfstates/${TF_VAR_level}/${TF_VAR_workspace}/${TF_VAR_tf_plan}"
     rm -f $STDERR_FILE
 
-    
-    terraform ${tf_action} -json ${tf_plan_file}
+
+    terraform ${tf_action} -json ${tf_plan_file} > ${tf_output_json} 
 
     RETURN_CODE=${PIPESTATUS[0]} && echo "Terraform ${tf_action} return code: ${RETURN_CODE}"
 
